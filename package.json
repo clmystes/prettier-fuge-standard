@@ -1,0 +1,48 @@
+{
+    "name": "prettier-fuge-standard",
+    "displayName": "Prettier Fuge Standard",
+    "description": "prettier with fuge-standard",
+    "version": "0.1.1",
+    "publisher": "clmystes",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.prettierSelection",
+        "onCommand:extension.prettierDocument"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.prettierSelection",
+                "title": "Prettier Selection"
+            },
+            {
+                "command": "extension.prettierDocument",
+                "title": "Prettier Document"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {
+        "@fuge/standard": "^0.6.0",
+        "prettier-eslint": "^8.8.1"
+    }
+}
